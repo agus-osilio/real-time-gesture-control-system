@@ -1,0 +1,14 @@
+# Versions pinned as of 2026-05-14 
+# Do NOT run "pip install --upgrade" without reviewing changelogs 
+ 
+# Hand tracking engine (Google) 
+mediapipe==0.10.21 
+ 
+# Camera capture and computer vision 
+opencv-python==4.11.0.86 
+ 
+# Numeric math (mediapipe requires numpy below 2.0) 
+numpy==1.26.4 
+ 
+# Win32 API to move Windows windows 
+pywin32==308 
