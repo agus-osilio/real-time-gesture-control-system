@@ -29,8 +29,8 @@ Double-click (or run) **`install_and_run.bat`**. The script:
 
 1. Verifies that Python 3.10+ is installed
 2. Creates a local virtual environment in `./.venv` (reuses it if it already exists)
-3. Installs the packages with pinned versions
-4. Audits vulnerabilities with `pip-audit`
+3. Shows the versions in `requirements.txt` and asks you to confirm before installing
+4. Installs the packages with pinned versions, then audits them with `pip-audit`
 5. Launches the application
 
 This is the easiest path — it handles setup and launch in one step.

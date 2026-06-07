@@ -70,26 +70,32 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: -- 3. WRITE requirements.txt WITH PINNED VERSIONS ---------------
+:: -- 3. REVIEW requirements.txt ----------------------------------
 echo.
-echo [3/5] Writing requirements.txt with pinned versions...
-
-echo # Versions pinned as of 2026-05-14 > "%BASE_DIR%requirements.txt"
-echo # Do NOT run "pip install --upgrade" without reviewing changelogs >> "%BASE_DIR%requirements.txt"
-echo. >> "%BASE_DIR%requirements.txt"
-echo # Hand tracking engine (Google) >> "%BASE_DIR%requirements.txt"
-echo mediapipe==0.10.21 >> "%BASE_DIR%requirements.txt"
-echo. >> "%BASE_DIR%requirements.txt"
-echo # Camera capture and computer vision >> "%BASE_DIR%requirements.txt"
-echo opencv-python==4.11.0.86 >> "%BASE_DIR%requirements.txt"
-echo. >> "%BASE_DIR%requirements.txt"
-echo # Numeric math (mediapipe requires numpy below 2.0) >> "%BASE_DIR%requirements.txt"
-echo numpy==1.26.4 >> "%BASE_DIR%requirements.txt"
-echo. >> "%BASE_DIR%requirements.txt"
-echo # Win32 API to move Windows windows >> "%BASE_DIR%requirements.txt"
-echo pywin32==308 >> "%BASE_DIR%requirements.txt"
-
-echo  OK - requirements.txt written.
+echo [3/5] Dependencies to be installed
+echo.
+if not exist "%BASE_DIR%requirements.txt" (
+    echo  ERROR: requirements.txt not found next to this .bat
+    echo  It is required to know which versions to install.
+    pause
+    exit /b 1
+)
+echo  ------------------------------------------------------------
+type "%BASE_DIR%requirements.txt"
+echo  ------------------------------------------------------------
+echo.
+echo  Review the versions listed above before continuing.
+echo  If you want to change them, edit requirements.txt and run again.
+echo.
+choice /M "Have you reviewed requirements.txt and want to install these versions?"
+if errorlevel 2 goto :req_cancel
+goto :req_ok
+:req_cancel
+echo  Cancelled by the user.
+pause
+exit /b 1
+:req_ok
+echo  OK - Proceeding with the versions above.
 
 :: -- 4. INSTALL PACKAGES ------------------------------------------
 echo.
