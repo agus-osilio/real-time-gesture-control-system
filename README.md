@@ -68,7 +68,7 @@ Press **Q** or **ESC** in the camera window.
 
 Close your hand into a fist over the window you want to move. Move your hand to drag it. Open your hand to release.
 
-### 🤲 Scale — Resize window
+### ✊✋ Scale — Resize window
 
 While in GRAB, open your second hand. Move both hands apart or together to resize the window. Open both hands to exit.
 
@@ -76,7 +76,7 @@ While in GRAB, open your second hand. Move both hands apart or together to resiz
 
 In the idle state, show two fingers (✌️) over the window to minimize.
 
-### ✌️ Send to monitor — Move to another monitor
+### ✊✌️ Send to monitor — Move to another monitor
 
 While in GRAB, show ✌️ with the other hand. The grabbed window is centered on the next monitor.
 
