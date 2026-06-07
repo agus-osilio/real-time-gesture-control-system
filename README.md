@@ -1,6 +1,6 @@
-# Hand Gesture Window Controller
+# Hand Gesture Window Controller (Microsoft Windows Only)
 
-Control Windows windows through hand gestures captured by a webcam. No special hardware required.
+Control windows through hand gestures captured by a webcam. No special hardware required.
 
 **Version:** 2.3 | **Python:** 3.10+ | **Platform:** Windows
 
